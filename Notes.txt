@@ -1,0 +1,12 @@
+- I'm assuming the file/corresponding object model fits in memory
+- I'm assuming the JSON file doesn't change (this is different from the real world I suppose, but again in real world
+  I'd probably deal with DB and wouldn't need to store/update the whole file in memory). I'm also assuming I only need
+  to read the file once - which means API server initializes the library I'm designing once and then makes multiple
+  calls to get different playlists.
+- Can a content have > 1 video with the same attributes (which will be played one after another)?
+  (In which case I'd assume the order of these videos in the file matters and defines in which order they are shown)
+- (follow up from previous assumption) I'm assuming prerolls only associate with videos based on attributes.
+  Which means if a content can have > 1 video with the same attributes all preroll videos will be shown before the
+  first content video with the same attributes, i.e. if a content has 2 videos with the same attributes there's no
+  way to associate any preroll video with the 2nd content video - all preroll videos will be played before all the
+  content videos (with the same attributes).
